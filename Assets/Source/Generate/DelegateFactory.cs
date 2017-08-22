@@ -3,34 +3,64 @@ using System;
 using System.Collections.Generic;
 using LuaInterface;
 
-public static class DelegateFactory
+public class DelegateFactory
 {
-	public delegate Delegate DelegateValue(LuaFunction func, LuaTable self, bool flag);
-	public static Dictionary<Type, DelegateValue> dict = new Dictionary<Type, DelegateValue>();
+	public delegate Delegate DelegateCreate(LuaFunction func, LuaTable self, bool flag);
+	public static Dictionary<Type, DelegateCreate> dict = new Dictionary<Type, DelegateCreate>();
+	static DelegateFactory factory = new DelegateFactory();
 
-	static DelegateFactory()
+	public static void Init()
 	{
 		Register();
 	}
 
-	[NoToLuaAttribute]
 	public static void Register()
 	{
 		dict.Clear();
-		dict.Add(typeof(System.Action), System_Action);
-		dict.Add(typeof(UnityEngine.Events.UnityAction), UnityEngine_Events_UnityAction);
-		dict.Add(typeof(System.Predicate<int>), System_Predicate_int);
-		dict.Add(typeof(System.Action<int>), System_Action_int);
-		dict.Add(typeof(System.Comparison<int>), System_Comparison_int);
-		dict.Add(typeof(UnityEngine.Application.LogCallback), UnityEngine_Application_LogCallback);
-		dict.Add(typeof(UnityEngine.AudioClip.PCMReaderCallback), UnityEngine_AudioClip_PCMReaderCallback);
-		dict.Add(typeof(UnityEngine.AudioClip.PCMSetPositionCallback), UnityEngine_AudioClip_PCMSetPositionCallback);
-	}
+		dict.Add(typeof(System.Action), factory.System_Action);
+		dict.Add(typeof(UnityEngine.Events.UnityAction), factory.UnityEngine_Events_UnityAction);
+		dict.Add(typeof(System.Predicate<int>), factory.System_Predicate_int);
+		dict.Add(typeof(System.Action<int>), factory.System_Action_int);
+		dict.Add(typeof(System.Comparison<int>), factory.System_Comparison_int);
+		dict.Add(typeof(System.Func<int,int>), factory.System_Func_int_int);
+		dict.Add(typeof(UnityEngine.Application.LogCallback), factory.UnityEngine_Application_LogCallback);
+		dict.Add(typeof(UnityEngine.AudioClip.PCMReaderCallback), factory.UnityEngine_AudioClip_PCMReaderCallback);
+		dict.Add(typeof(UnityEngine.AudioClip.PCMSetPositionCallback), factory.UnityEngine_AudioClip_PCMSetPositionCallback);
 
-    [NoToLuaAttribute]
+		DelegateTraits<System.Action>.Init(factory.System_Action);
+		DelegateTraits<UnityEngine.Events.UnityAction>.Init(factory.UnityEngine_Events_UnityAction);
+		DelegateTraits<System.Predicate<int>>.Init(factory.System_Predicate_int);
+		DelegateTraits<System.Action<int>>.Init(factory.System_Action_int);
+		DelegateTraits<System.Comparison<int>>.Init(factory.System_Comparison_int);
+		DelegateTraits<System.Func<int,int>>.Init(factory.System_Func_int_int);
+		DelegateTraits<UnityEngine.Application.LogCallback>.Init(factory.UnityEngine_Application_LogCallback);
+		DelegateTraits<UnityEngine.AudioClip.PCMReaderCallback>.Init(factory.UnityEngine_AudioClip_PCMReaderCallback);
+		DelegateTraits<UnityEngine.AudioClip.PCMSetPositionCallback>.Init(factory.UnityEngine_AudioClip_PCMSetPositionCallback);
+
+		TypeTraits<System.Action>.Init(factory.Check_System_Action);
+		TypeTraits<UnityEngine.Events.UnityAction>.Init(factory.Check_UnityEngine_Events_UnityAction);
+		TypeTraits<System.Predicate<int>>.Init(factory.Check_System_Predicate_int);
+		TypeTraits<System.Action<int>>.Init(factory.Check_System_Action_int);
+		TypeTraits<System.Comparison<int>>.Init(factory.Check_System_Comparison_int);
+		TypeTraits<System.Func<int,int>>.Init(factory.Check_System_Func_int_int);
+		TypeTraits<UnityEngine.Application.LogCallback>.Init(factory.Check_UnityEngine_Application_LogCallback);
+		TypeTraits<UnityEngine.AudioClip.PCMReaderCallback>.Init(factory.Check_UnityEngine_AudioClip_PCMReaderCallback);
+		TypeTraits<UnityEngine.AudioClip.PCMSetPositionCallback>.Init(factory.Check_UnityEngine_AudioClip_PCMSetPositionCallback);
+
+		StackTraits<System.Action>.Push = factory.Push_System_Action;
+		StackTraits<UnityEngine.Events.UnityAction>.Push = factory.Push_UnityEngine_Events_UnityAction;
+		StackTraits<System.Predicate<int>>.Push = factory.Push_System_Predicate_int;
+		StackTraits<System.Action<int>>.Push = factory.Push_System_Action_int;
+		StackTraits<System.Comparison<int>>.Push = factory.Push_System_Comparison_int;
+		StackTraits<System.Func<int,int>>.Push = factory.Push_System_Func_int_int;
+		StackTraits<UnityEngine.Application.LogCallback>.Push = factory.Push_UnityEngine_Application_LogCallback;
+		StackTraits<UnityEngine.AudioClip.PCMReaderCallback>.Push = factory.Push_UnityEngine_AudioClip_PCMReaderCallback;
+		StackTraits<UnityEngine.AudioClip.PCMSetPositionCallback>.Push = factory.Push_UnityEngine_AudioClip_PCMSetPositionCallback;
+	}
+    
     public static Delegate CreateDelegate(Type t, LuaFunction func = null)
     {
-        DelegateValue Create = null;
+        DelegateCreate Create = null;
 
         if (!dict.TryGetValue(t, out Create))
         {
@@ -55,13 +85,12 @@ public static class DelegateFactory
             }       
         }
 
-        return Create(func, null, false);        
+        return Create(null, null, false);        
     }
-
-    [NoToLuaAttribute]
+    
     public static Delegate CreateDelegate(Type t, LuaFunction func, LuaTable self)
     {
-        DelegateValue Create = null;
+        DelegateCreate Create = null;
 
         if (!dict.TryGetValue(t, out Create))
         {
@@ -86,10 +115,9 @@ public static class DelegateFactory
             }
         }
 
-        return Create(func, self, true);
+        return Create(null, null, true);
     }
-
-    [NoToLuaAttribute]
+    
     public static Delegate RemoveDelegate(Delegate obj, LuaFunction func)
     {
         LuaState state = func.GetLuaState();
@@ -109,8 +137,7 @@ public static class DelegateFactory
 
         return obj;
     }
-
-    [NoToLuaAttribute]
+    
     public static Delegate RemoveDelegate(Delegate obj, Delegate dg)
     {
         LuaDelegate remove = dg.Target as LuaDelegate;
@@ -159,7 +186,7 @@ public static class DelegateFactory
 		}
 	}
 
-	public static Delegate System_Action(LuaFunction func, LuaTable self, bool flag)
+	public System.Action System_Action(LuaFunction func, LuaTable self, bool flag)
 	{
 		if (func == null)
 		{
@@ -183,6 +210,16 @@ public static class DelegateFactory
 		}
 	}
 
+	bool Check_System_Action(IntPtr L, int pos)
+	{
+		return TypeChecker.CheckDelegateType(typeof(System.Action), L, pos);
+	}
+
+	void Push_System_Action(IntPtr L, System.Action o)
+	{
+		ToLua.Push(L, o);
+	}
+
 	class UnityEngine_Events_UnityAction_Event : LuaDelegate
 	{
 		public UnityEngine_Events_UnityAction_Event(LuaFunction func) : base(func) { }
@@ -202,7 +239,7 @@ public static class DelegateFactory
 		}
 	}
 
-	public static Delegate UnityEngine_Events_UnityAction(LuaFunction func, LuaTable self, bool flag)
+	public UnityEngine.Events.UnityAction UnityEngine_Events_UnityAction(LuaFunction func, LuaTable self, bool flag)
 	{
 		if (func == null)
 		{
@@ -224,6 +261,16 @@ public static class DelegateFactory
 			target.method = d.Method;
 			return d;
 		}
+	}
+
+	bool Check_UnityEngine_Events_UnityAction(IntPtr L, int pos)
+	{
+		return TypeChecker.CheckDelegateType(typeof(UnityEngine.Events.UnityAction), L, pos);
+	}
+
+	void Push_UnityEngine_Events_UnityAction(IntPtr L, UnityEngine.Events.UnityAction o)
+	{
+		ToLua.Push(L, o);
 	}
 
 	class System_Predicate_int_Event : LuaDelegate
@@ -253,7 +300,7 @@ public static class DelegateFactory
 		}
 	}
 
-	public static Delegate System_Predicate_int(LuaFunction func, LuaTable self, bool flag)
+	public System.Predicate<int> System_Predicate_int(LuaFunction func, LuaTable self, bool flag)
 	{
 		if (func == null)
 		{
@@ -275,6 +322,16 @@ public static class DelegateFactory
 			target.method = d.Method;
 			return d;
 		}
+	}
+
+	bool Check_System_Predicate_int(IntPtr L, int pos)
+	{
+		return TypeChecker.CheckDelegateType(typeof(System.Predicate<int>), L, pos);
+	}
+
+	void Push_System_Predicate_int(IntPtr L, System.Predicate<int> o)
+	{
+		ToLua.Push(L, o);
 	}
 
 	class System_Action_int_Event : LuaDelegate
@@ -300,7 +357,7 @@ public static class DelegateFactory
 		}
 	}
 
-	public static Delegate System_Action_int(LuaFunction func, LuaTable self, bool flag)
+	public System.Action<int> System_Action_int(LuaFunction func, LuaTable self, bool flag)
 	{
 		if (func == null)
 		{
@@ -322,6 +379,16 @@ public static class DelegateFactory
 			target.method = d.Method;
 			return d;
 		}
+	}
+
+	bool Check_System_Action_int(IntPtr L, int pos)
+	{
+		return TypeChecker.CheckDelegateType(typeof(System.Action<int>), L, pos);
+	}
+
+	void Push_System_Action_int(IntPtr L, System.Action<int> o)
+	{
+		ToLua.Push(L, o);
 	}
 
 	class System_Comparison_int_Event : LuaDelegate
@@ -353,7 +420,7 @@ public static class DelegateFactory
 		}
 	}
 
-	public static Delegate System_Comparison_int(LuaFunction func, LuaTable self, bool flag)
+	public System.Comparison<int> System_Comparison_int(LuaFunction func, LuaTable self, bool flag)
 	{
 		if (func == null)
 		{
@@ -375,6 +442,77 @@ public static class DelegateFactory
 			target.method = d.Method;
 			return d;
 		}
+	}
+
+	bool Check_System_Comparison_int(IntPtr L, int pos)
+	{
+		return TypeChecker.CheckDelegateType(typeof(System.Comparison<int>), L, pos);
+	}
+
+	void Push_System_Comparison_int(IntPtr L, System.Comparison<int> o)
+	{
+		ToLua.Push(L, o);
+	}
+
+	class System_Func_int_int_Event : LuaDelegate
+	{
+		public System_Func_int_int_Event(LuaFunction func) : base(func) { }
+		public System_Func_int_int_Event(LuaFunction func, LuaTable self) : base(func, self) { }
+
+		public int Call(int param0)
+		{
+			func.BeginPCall();
+			func.Push(param0);
+			func.PCall();
+			int ret = (int)func.CheckNumber();
+			func.EndPCall();
+			return ret;
+		}
+
+		public int CallWithSelf(int param0)
+		{
+			func.BeginPCall();
+			func.Push(self);
+			func.Push(param0);
+			func.PCall();
+			int ret = (int)func.CheckNumber();
+			func.EndPCall();
+			return ret;
+		}
+	}
+
+	public System.Func<int,int> System_Func_int_int(LuaFunction func, LuaTable self, bool flag)
+	{
+		if (func == null)
+		{
+			System.Func<int,int> fn = delegate(int param0) { return 0; };
+			return fn;
+		}
+
+		if(!flag)
+		{
+			System_Func_int_int_Event target = new System_Func_int_int_Event(func);
+			System.Func<int,int> d = target.Call;
+			target.method = d.Method;
+			return d;
+		}
+		else
+		{
+			System_Func_int_int_Event target = new System_Func_int_int_Event(func, self);
+			System.Func<int,int> d = target.CallWithSelf;
+			target.method = d.Method;
+			return d;
+		}
+	}
+
+	bool Check_System_Func_int_int(IntPtr L, int pos)
+	{
+		return TypeChecker.CheckDelegateType(typeof(System.Func<int,int>), L, pos);
+	}
+
+	void Push_System_Func_int_int(IntPtr L, System.Func<int,int> o)
+	{
+		ToLua.Push(L, o);
 	}
 
 	class UnityEngine_Application_LogCallback_Event : LuaDelegate
@@ -404,7 +542,7 @@ public static class DelegateFactory
 		}
 	}
 
-	public static Delegate UnityEngine_Application_LogCallback(LuaFunction func, LuaTable self, bool flag)
+	public UnityEngine.Application.LogCallback UnityEngine_Application_LogCallback(LuaFunction func, LuaTable self, bool flag)
 	{
 		if (func == null)
 		{
@@ -426,6 +564,16 @@ public static class DelegateFactory
 			target.method = d.Method;
 			return d;
 		}
+	}
+
+	bool Check_UnityEngine_Application_LogCallback(IntPtr L, int pos)
+	{
+		return TypeChecker.CheckDelegateType(typeof(UnityEngine.Application.LogCallback), L, pos);
+	}
+
+	void Push_UnityEngine_Application_LogCallback(IntPtr L, UnityEngine.Application.LogCallback o)
+	{
+		ToLua.Push(L, o);
 	}
 
 	class UnityEngine_AudioClip_PCMReaderCallback_Event : LuaDelegate
@@ -451,7 +599,7 @@ public static class DelegateFactory
 		}
 	}
 
-	public static Delegate UnityEngine_AudioClip_PCMReaderCallback(LuaFunction func, LuaTable self, bool flag)
+	public UnityEngine.AudioClip.PCMReaderCallback UnityEngine_AudioClip_PCMReaderCallback(LuaFunction func, LuaTable self, bool flag)
 	{
 		if (func == null)
 		{
@@ -473,6 +621,16 @@ public static class DelegateFactory
 			target.method = d.Method;
 			return d;
 		}
+	}
+
+	bool Check_UnityEngine_AudioClip_PCMReaderCallback(IntPtr L, int pos)
+	{
+		return TypeChecker.CheckDelegateType(typeof(UnityEngine.AudioClip.PCMReaderCallback), L, pos);
+	}
+
+	void Push_UnityEngine_AudioClip_PCMReaderCallback(IntPtr L, UnityEngine.AudioClip.PCMReaderCallback o)
+	{
+		ToLua.Push(L, o);
 	}
 
 	class UnityEngine_AudioClip_PCMSetPositionCallback_Event : LuaDelegate
@@ -498,7 +656,7 @@ public static class DelegateFactory
 		}
 	}
 
-	public static Delegate UnityEngine_AudioClip_PCMSetPositionCallback(LuaFunction func, LuaTable self, bool flag)
+	public UnityEngine.AudioClip.PCMSetPositionCallback UnityEngine_AudioClip_PCMSetPositionCallback(LuaFunction func, LuaTable self, bool flag)
 	{
 		if (func == null)
 		{
@@ -520,6 +678,16 @@ public static class DelegateFactory
 			target.method = d.Method;
 			return d;
 		}
+	}
+
+	bool Check_UnityEngine_AudioClip_PCMSetPositionCallback(IntPtr L, int pos)
+	{
+		return TypeChecker.CheckDelegateType(typeof(UnityEngine.AudioClip.PCMSetPositionCallback), L, pos);
+	}
+
+	void Push_UnityEngine_AudioClip_PCMSetPositionCallback(IntPtr L, UnityEngine.AudioClip.PCMSetPositionCallback o)
+	{
+		ToLua.Push(L, o);
 	}
 
 }

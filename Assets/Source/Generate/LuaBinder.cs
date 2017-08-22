@@ -49,6 +49,7 @@ public static class LuaBinder
 		UnityEngine_WrapModeWrap.Register(L);
 		UnityEngine_QualitySettingsWrap.Register(L);
 		UnityEngine_RenderSettingsWrap.Register(L);
+		UnityEngine_ResourcesWrap.Register(L);
 		L.BeginModule("Events");
 		L.RegFunction("UnityAction", UnityEngine_Events_UnityAction);
 		L.EndModule();
@@ -65,6 +66,7 @@ public static class LuaBinder
 		L.RegFunction("Predicate_int", System_Predicate_int);
 		L.RegFunction("Action_int", System_Action_int);
 		L.RegFunction("Comparison_int", System_Comparison_int);
+		L.RegFunction("Func_int_int", System_Func_int_int);
 		L.EndModule();
 		L.EndModule();
 		L.BeginPreLoad();
@@ -97,13 +99,13 @@ public static class LuaBinder
 
 			if (count == 1)
 			{
-				Delegate arg1 = DelegateFactory.CreateDelegate(typeof(UnityEngine.Events.UnityAction), func);
+				Delegate arg1 = DelegateTraits<UnityEngine.Events.UnityAction>.Create(func);
 				ToLua.Push(L, arg1);
 			}
 			else
 			{
 				LuaTable self = ToLua.CheckLuaTable(L, 2);
-				Delegate arg1 = DelegateFactory.CreateDelegate(typeof(UnityEngine.Events.UnityAction), func, self);
+				Delegate arg1 = DelegateTraits<UnityEngine.Events.UnityAction>.Create(func, self);
 				ToLua.Push(L, arg1);
 			}
 			return 1;
@@ -124,13 +126,13 @@ public static class LuaBinder
 
 			if (count == 1)
 			{
-				Delegate arg1 = DelegateFactory.CreateDelegate(typeof(UnityEngine.Application.LogCallback), func);
+				Delegate arg1 = DelegateTraits<UnityEngine.Application.LogCallback>.Create(func);
 				ToLua.Push(L, arg1);
 			}
 			else
 			{
 				LuaTable self = ToLua.CheckLuaTable(L, 2);
-				Delegate arg1 = DelegateFactory.CreateDelegate(typeof(UnityEngine.Application.LogCallback), func, self);
+				Delegate arg1 = DelegateTraits<UnityEngine.Application.LogCallback>.Create(func, self);
 				ToLua.Push(L, arg1);
 			}
 			return 1;
@@ -151,13 +153,13 @@ public static class LuaBinder
 
 			if (count == 1)
 			{
-				Delegate arg1 = DelegateFactory.CreateDelegate(typeof(UnityEngine.AudioClip.PCMReaderCallback), func);
+				Delegate arg1 = DelegateTraits<UnityEngine.AudioClip.PCMReaderCallback>.Create(func);
 				ToLua.Push(L, arg1);
 			}
 			else
 			{
 				LuaTable self = ToLua.CheckLuaTable(L, 2);
-				Delegate arg1 = DelegateFactory.CreateDelegate(typeof(UnityEngine.AudioClip.PCMReaderCallback), func, self);
+				Delegate arg1 = DelegateTraits<UnityEngine.AudioClip.PCMReaderCallback>.Create(func, self);
 				ToLua.Push(L, arg1);
 			}
 			return 1;
@@ -178,13 +180,13 @@ public static class LuaBinder
 
 			if (count == 1)
 			{
-				Delegate arg1 = DelegateFactory.CreateDelegate(typeof(UnityEngine.AudioClip.PCMSetPositionCallback), func);
+				Delegate arg1 = DelegateTraits<UnityEngine.AudioClip.PCMSetPositionCallback>.Create(func);
 				ToLua.Push(L, arg1);
 			}
 			else
 			{
 				LuaTable self = ToLua.CheckLuaTable(L, 2);
-				Delegate arg1 = DelegateFactory.CreateDelegate(typeof(UnityEngine.AudioClip.PCMSetPositionCallback), func, self);
+				Delegate arg1 = DelegateTraits<UnityEngine.AudioClip.PCMSetPositionCallback>.Create(func, self);
 				ToLua.Push(L, arg1);
 			}
 			return 1;
@@ -205,13 +207,13 @@ public static class LuaBinder
 
 			if (count == 1)
 			{
-				Delegate arg1 = DelegateFactory.CreateDelegate(typeof(System.Action), func);
+				Delegate arg1 = DelegateTraits<System.Action>.Create(func);
 				ToLua.Push(L, arg1);
 			}
 			else
 			{
 				LuaTable self = ToLua.CheckLuaTable(L, 2);
-				Delegate arg1 = DelegateFactory.CreateDelegate(typeof(System.Action), func, self);
+				Delegate arg1 = DelegateTraits<System.Action>.Create(func, self);
 				ToLua.Push(L, arg1);
 			}
 			return 1;
@@ -232,13 +234,13 @@ public static class LuaBinder
 
 			if (count == 1)
 			{
-				Delegate arg1 = DelegateFactory.CreateDelegate(typeof(System.Predicate<int>), func);
+				Delegate arg1 = DelegateTraits<System.Predicate<int>>.Create(func);
 				ToLua.Push(L, arg1);
 			}
 			else
 			{
 				LuaTable self = ToLua.CheckLuaTable(L, 2);
-				Delegate arg1 = DelegateFactory.CreateDelegate(typeof(System.Predicate<int>), func, self);
+				Delegate arg1 = DelegateTraits<System.Predicate<int>>.Create(func, self);
 				ToLua.Push(L, arg1);
 			}
 			return 1;
@@ -259,13 +261,13 @@ public static class LuaBinder
 
 			if (count == 1)
 			{
-				Delegate arg1 = DelegateFactory.CreateDelegate(typeof(System.Action<int>), func);
+				Delegate arg1 = DelegateTraits<System.Action<int>>.Create(func);
 				ToLua.Push(L, arg1);
 			}
 			else
 			{
 				LuaTable self = ToLua.CheckLuaTable(L, 2);
-				Delegate arg1 = DelegateFactory.CreateDelegate(typeof(System.Action<int>), func, self);
+				Delegate arg1 = DelegateTraits<System.Action<int>>.Create(func, self);
 				ToLua.Push(L, arg1);
 			}
 			return 1;
@@ -286,13 +288,40 @@ public static class LuaBinder
 
 			if (count == 1)
 			{
-				Delegate arg1 = DelegateFactory.CreateDelegate(typeof(System.Comparison<int>), func);
+				Delegate arg1 = DelegateTraits<System.Comparison<int>>.Create(func);
 				ToLua.Push(L, arg1);
 			}
 			else
 			{
 				LuaTable self = ToLua.CheckLuaTable(L, 2);
-				Delegate arg1 = DelegateFactory.CreateDelegate(typeof(System.Comparison<int>), func, self);
+				Delegate arg1 = DelegateTraits<System.Comparison<int>>.Create(func, self);
+				ToLua.Push(L, arg1);
+			}
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int System_Func_int_int(IntPtr L)
+	{
+		try
+		{
+			int count = LuaDLL.lua_gettop(L);
+			LuaFunction func = ToLua.CheckLuaFunction(L, 1);
+
+			if (count == 1)
+			{
+				Delegate arg1 = DelegateTraits<System.Func<int,int>>.Create(func);
+				ToLua.Push(L, arg1);
+			}
+			else
+			{
+				LuaTable self = ToLua.CheckLuaTable(L, 2);
+				Delegate arg1 = DelegateTraits<System.Func<int,int>>.Create(func, self);
 				ToLua.Push(L, arg1);
 			}
 			return 1;
