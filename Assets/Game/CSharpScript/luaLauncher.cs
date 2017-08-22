@@ -3,11 +3,15 @@ using System.Collections;
 
 using LuaInterface;
 
-public class luaLauncher : MonoBehaviour {
+public class LuaLauncher : MonoBehaviour
+{
+    LuaState m_lua;
 
 	// Use this for initialization
 	void Start () 
     {
+        GameObject.DontDestroyOnLoad(gameObject);
+
 	    // todo 从远程服务器拉取lua框架
 
         // 启动lua框架
@@ -21,11 +25,17 @@ public class luaLauncher : MonoBehaviour {
         yield return www;
         string luaText = www.text;
 
-        LuaState lua = new LuaState();
-        lua.Start();
-        lua.DoString(luaText);
+        m_lua = new LuaState();
+        m_lua.Start();
+
+        LuaBinder.Bind(m_lua);
+
+        m_lua.DoString(luaText);
         //lua.CheckTop();
         //lua.Dispose();
+
+        LuaFunction luaFunc = m_lua.GetFunction("Main");
+        luaFunc.Call();
     }
 	
 	// Update is called once per frame
@@ -33,4 +43,10 @@ public class luaLauncher : MonoBehaviour {
     {
 	
 	}
+
+    void OnLevelWasLoaded()
+    {
+        LuaFunction luaFunc = m_lua.GetFunction("OnLevelWasLoaded");
+        luaFunc.Call<string>(Application.loadedLevelName);
+    }
 }
