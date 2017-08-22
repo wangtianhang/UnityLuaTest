@@ -47,26 +47,26 @@ namespace LuaInterface
         public LuaByteBuffer(IntPtr source, int len)
         {
             buffer = new byte[len];
-            Length = len;
+            _length = len;
             Marshal.Copy(source, buffer, 0, len);
         }
         
         public LuaByteBuffer(byte[] buf)
         {
             buffer = buf;
-            Length = buf.Length;            
+            _length = buf.Length;            
         }
 
         public LuaByteBuffer(byte[] buf, int len)
         {            
             buffer = buf;
-            Length = len;
+            _length = len;
         }
 
         public LuaByteBuffer(System.IO.MemoryStream stream)
         {
             buffer = stream.GetBuffer();
-            Length = (int)stream.Length;            
+            _length = (int)stream.Length;            
         }
 
         public static implicit operator LuaByteBuffer(System.IO.MemoryStream stream)
@@ -81,7 +81,12 @@ namespace LuaInterface
 //             get;
 //             private set;
 //         }
-        public int Length;
+        public int _length;
+
+        public int Length
+        {
+            get { return _length; }
+        }
     }   
 
     public class LuaOut<T> { }
