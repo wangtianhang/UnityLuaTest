@@ -76,11 +76,12 @@ namespace LuaInterface
 
         public byte[] buffer;    
 
-        public int Length
-        {
-            get;
-            private set;
-        }    
+//         public int Length
+//         {
+//             get;
+//             private set;
+//         }
+        public int Length;
     }   
 
     public class LuaOut<T> { }

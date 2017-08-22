@@ -1007,8 +1007,8 @@ namespace LuaInterface
             Value = value;
         }
 
-        public K Key { get; set; }
-        public V Value { get; set; }
+        public K Key;
+        public V Value;
     }
 
     public class LuaDictTable<K, V> : IDisposable, IEnumerable<LuaDictEntry<K, V>>
