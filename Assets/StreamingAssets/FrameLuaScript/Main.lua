@@ -21,7 +21,8 @@ function OnLevelWasLoaded(level)
 	end
 
 	if(level == "login") then
-		Login.Login()
+		login = LoginClass.New()
+		login:Login()
 	end
 
 end

@@ -1,7 +1,14 @@
 
-Login = {}
+LoginClass = {}
+LoginClass.__index = LoginClass;
 
-function Login.Login()
+function LoginClass.New()
+	local ret = {};
+	setmetatable(ret, LoginClass)
+	return ret;
+end
+
+function LoginClass:Login()
 
 	print("login")
 
