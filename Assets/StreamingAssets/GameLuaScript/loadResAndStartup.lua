@@ -1,4 +1,4 @@
-﻿LoadResAndStartupClass = {}
+LoadResAndStartupClass = {}
 LoadResAndStartupClass.__index = LoadResAndStartupClass;
 
 function LoadResAndStartupClass.New()
