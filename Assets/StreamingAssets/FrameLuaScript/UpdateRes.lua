@@ -1,7 +1,14 @@
 
-updateRes = {}
+UpdateResClass = {}
+UpdateResClass.__index = UpdateResClass;
+function UpdateResClass : New()
+	local ret = {}
+	setmetatable(ret, UpdateResClass)
+	return ret;
+end
 
-function updateRes.updateRes()
+
+function UpdateResClass:UpdateRes()
 
 	print("updateRes")
 

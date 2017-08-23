@@ -2,7 +2,8 @@ function Main()
 
 	print("Main")
 
-	updateRes.updateRes()
+	updateRes = UpdateResClass:New();
+	updateRes:UpdateRes();
 
 end
 
