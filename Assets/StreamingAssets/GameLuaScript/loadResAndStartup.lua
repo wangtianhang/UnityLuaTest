@@ -11,6 +11,6 @@ function LoadResAndStartupClass:LoadResAndStartup()
 
 	print("加载表格等")
 
-	UnityEngine.Application.LoadLevel("login")
+	Application.LoadLevel("login")
 
 end

@@ -12,6 +12,6 @@ function UpdateResClass:UpdateRes()
 
 	print("updateRes")
 
-	UnityEngine.Application.LoadLevel("loadResAndStartup")
+	Application.LoadLevel("loadResAndStartup")
 
 end

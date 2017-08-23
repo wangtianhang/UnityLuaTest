@@ -1,3 +1,7 @@
+GameObject = require "UnityEngine.GameObject"
+Application = require "UnityEngine.Application"
+Resources = require "UnityEngine.Resources"
+
 function Main()	
 
 	print("Main")
