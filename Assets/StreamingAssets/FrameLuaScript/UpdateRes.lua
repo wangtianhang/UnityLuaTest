@@ -11,6 +11,12 @@ function OnLevelWasLoaded(level)
 
 print("OnLevelWasLoaded " .. level)
 
-LoadResAndStartup()
+if(level == "loadResAndStartup") then
+	LoadResAndStartup()
+end
+
+if(level == "login") then
+	Login()
+end
 
 end
