@@ -1,7 +1,7 @@
 
 UpdateResClass = {}
 UpdateResClass.__index = UpdateResClass;
-function UpdateResClass : New()
+function UpdateResClass.New()
 	local ret = {}
 	setmetatable(ret, UpdateResClass)
 	return ret;

@@ -3,7 +3,7 @@ function Main()
 	print("Main")
 
 	updateRes = UpdateResClass:New();
-	updateRes:UpdateRes();
+	updateRes.UpdateRes();
 
 end
 
@@ -12,7 +12,8 @@ function OnLevelWasLoaded(level)
 	print("OnLevelWasLoaded " .. level)
 
 	if(level == "loadResAndStartup") then
-		LoadResAndStartup.LoadResAndStartup()
+		loadResAndStartup = LoadResAndStartupClass.New();
+		loadResAndStartup:LoadResAndStartup()
 	end
 
 	if(level == "login") then
