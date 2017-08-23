@@ -143,7 +143,9 @@ public static class CustomSettings
         _GT(typeof(RenderSettings)),                                                   
         _GT(typeof(BlendWeights)),           
         _GT(typeof(RenderTexture)),
-        _GT(typeof(Resources)),        
+        _GT(typeof(Resources)),
+        
+        _GT(typeof(UILabel)),    
     };
 
     public static List<Type> dynamicList = new List<Type>()
@@ -193,7 +195,6 @@ public static class CustomSettings
         typeof(UISprite),
         typeof(UIGrid),
         typeof(UITable),
-        typeof(UIWrapGrid),
         typeof(UIInput),
         typeof(UIScrollView),
         typeof(UIEventListener),
