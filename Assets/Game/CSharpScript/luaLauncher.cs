@@ -11,7 +11,7 @@ public class LuaLauncher : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-        GameObject.DontDestroyOnLoad(gameObject);
+        //GameObject.DontDestroyOnLoad(gameObject);
 
 	    // todo 从远程服务器拉取lua框架
 
@@ -55,5 +55,10 @@ public class LuaLauncher : MonoBehaviour
     {
         LuaFunction luaFunc = m_lua.GetFunction("OnLevelWasLoaded");
         luaFunc.Call<string>(Application.loadedLevelName);
+    }
+
+    public LuaState GetLuaState()
+    {
+        return m_lua;
     }
 }

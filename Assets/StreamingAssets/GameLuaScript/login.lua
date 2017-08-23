@@ -1,20 +1,22 @@
 GameObject = require "UnityEngine.GameObject"
 
-function Login()
+Login = {}
 
-print("login")
+function Login.Login()
 
-uiRootPrefab = UnityEngine.Resources.Load("ui/UI Root");
-uiGo = GameObject.Instantiate(uiRootPrefab);
+	print("login")
 
-labelPrefab = UnityEngine.Resources.Load("ui/LoginUI");
-labelGo = GameObject.Instantiate(labelPrefab);
-labelGo.transform.parent = uiGo.transform;
-labelGo.transform.localScale = Vector3.one;
+	uiRootPrefab = UnityEngine.Resources.Load("ui/UI Root");
+	uiGo = GameObject.Instantiate(uiRootPrefab);
 
---typeUILabel = typeof(UILabel);
---print(typeUILabel)
-uilabel = labelGo:GetComponent(typeof(UILabel));
-uilabel.text = "haha";
+	labelPrefab = UnityEngine.Resources.Load("ui/LoginUI");
+	labelGo = GameObject.Instantiate(labelPrefab);
+	labelGo.transform.parent = uiGo.transform;
+	labelGo.transform.localScale = Vector3.one;
+
+	--typeUILabel = typeof(UILabel);
+	--print(typeUILabel)
+	uilabel = labelGo:GetComponent(typeof(UILabel));
+	uilabel.text = "haha";
 
 end

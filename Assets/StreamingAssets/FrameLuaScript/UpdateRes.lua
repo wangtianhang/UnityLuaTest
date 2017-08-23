@@ -1,22 +1,10 @@
 
-function Main()	
+updateRes = {}
 
-print("updateRes")
+function updateRes.updateRes()
 
-UnityEngine.Application.LoadLevel("loadResAndStartup")
+	print("updateRes")
 
-end
-
-function OnLevelWasLoaded(level)
-
-print("OnLevelWasLoaded " .. level)
-
-if(level == "loadResAndStartup") then
-	LoadResAndStartup()
-end
-
-if(level == "login") then
-	Login()
-end
+	UnityEngine.Application.LoadLevel("loadResAndStartup")
 
 end
