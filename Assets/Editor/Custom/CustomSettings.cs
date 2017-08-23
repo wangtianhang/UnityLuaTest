@@ -145,7 +145,8 @@ public static class CustomSettings
         _GT(typeof(RenderTexture)),
         _GT(typeof(Resources)),
         
-        _GT(typeof(UILabel)),    
+        _GT(typeof(UILabel)),
+        _GT(typeof(LuaBehaviour)),
     };
 
     public static List<Type> dynamicList = new List<Type>()

@@ -11,6 +11,7 @@ public static class LuaBinder
 		L.BeginModule(null);
 		LuaInterface_DebuggerWrap.Register(L);
 		UILabelWrap.Register(L);
+		LuaBehaviourWrap.Register(L);
 		UIWidgetWrap.Register(L);
 		UIRectWrap.Register(L);
 		L.BeginModule("UnityEngine");
