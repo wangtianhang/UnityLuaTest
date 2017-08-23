@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
 
 using LuaInterface;
 
@@ -20,17 +21,23 @@ public class LuaLauncher : MonoBehaviour
 
     IEnumerator LaunchLua()
     {
-        string url = "file://" + Application.streamingAssetsPath + "/FrameLuaScript/UpdateRes.lua";
-        WWW www = new WWW(url);
-        yield return www;
-        string luaText = www.text;
-
         m_lua = new LuaState();
         m_lua.Start();
 
         LuaBinder.Bind(m_lua);
 
-        m_lua.DoString(luaText);
+        string[] luaFiles = Directory.GetFiles(Application.streamingAssetsPath, "*.lua", SearchOption.AllDirectories);
+        foreach(var iter in luaFiles)
+        {
+            string url = "file://" + iter;
+            WWW www = new WWW(url);
+            yield return www;
+
+            string fileName = Path.GetFileNameWithoutExtension(iter);
+            string luaText = www.text;
+            m_lua.DoString(luaText, fileName);
+        }
+        
         //lua.CheckTop();
         //lua.Dispose();
 

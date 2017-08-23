@@ -11,4 +11,6 @@ function OnLevelWasLoaded(level)
 
 print("OnLevelWasLoaded " .. level)
 
+LoadResAndStartup()
+
 end
