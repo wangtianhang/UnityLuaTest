@@ -22,7 +22,10 @@ function LoginClass:Login()
 
 	--typeUILabel = typeof(UILabel);
 	--print(typeUILabel)
-	uilabel = labelGo:GetComponent(typeof(UILabel));
-	uilabel.text = "haha";
-
+	--uilabel = labelGo:GetComponent(typeof(UILabel));
+	--uilabel.text = "haha";
+	
+	labelGo:AddComponent(typeof(LuaBehaviour))
+	loginUI = LoginUIClass.New(labelGo);
+	loginUI:Init();
 end
