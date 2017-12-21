@@ -54,11 +54,14 @@ namespace luaTest
         [DllImport("lua515.dll", EntryPoint = "lua_pushstring", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr lua_pushstring(IntPtr l, string name);
 
-        [DllImport("lua515.dll", EntryPoint = "lua_pushcfunction", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr lua_pushcfunction(IntPtr l, IntPtr fn);
+        [DllImport("lua515.dll", EntryPoint = "lua_pushcclosure", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr lua_pushcclosure(IntPtr l, IntPtr fn, int n);
 
-        [DllImport("lua515.dll", EntryPoint = "lua_setglobal", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr lua_setglobal(IntPtr l, string name);
+        [DllImport("lua515.dll", EntryPoint = "lua_setfield", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr lua_setfield(IntPtr l, int idx, string name);
+
+        [DllImport("lua515.dll", EntryPoint = "lua_pcall", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr lua_pcall(IntPtr l, int nargs, int nresults, int errfunc);
 
         [DllImport("testCharpToC.dll", EntryPoint = "Add", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern int Add(int a, int b);
@@ -74,11 +77,13 @@ namespace luaTest
             int length = Length("test");
             Console.WriteLine(length.ToString());
 
-            //IntPtr l = luaL_newstate();
+            IntPtr l = luaL_newstate();
             //luaL_openlibs(l);
 
-            //LuaCSFunction funcWrap = WriteLine;
-            //IntPtr fn = Marshal.GetFunctionPointerForDelegate(funcWrap);
+            LuaCSFunction funcWrap = WriteLine;
+            IntPtr fn = Marshal.GetFunctionPointerForDelegate(funcWrap);
+            lua_pushcclosure(l, fn, 0);
+            lua_setfield(l, -10002, "print");
             //luaL_register(l, "print2", fn);
             //lua_pushstring(l, "print");
             //lua_pushcfunction(l, fn);
@@ -87,6 +92,8 @@ namespace luaTest
             //luaL_register(l, "print2", fn);
 
             //luaL_loadstring(l, "print('hello world')");
+            luaL_loadstring(l, "print('hello world')");
+            lua_pcall(l, 0, -1, 0);
 
             //lua_close(l);
             Console.ReadLine();
