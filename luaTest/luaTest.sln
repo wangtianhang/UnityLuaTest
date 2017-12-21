@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "luaTest", "luaTest\luaTest.csproj", "{807B6E01-B3CD-4F26-9851-3B6B7987BE10}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testCharpToC", "testCharpToC\testCharpToC.vcxproj", "{67F76314-D2CC-46C8-BC11-BD65E3E07B39}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua515", "lua515\lua515.vcxproj", "{CA60A70E-AF69-4913-BB29-FCC64A2A565A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{807B6E01-B3CD-4F26-9851-3B6B7987BE10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807B6E01-B3CD-4F26-9851-3B6B7987BE10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807B6E01-B3CD-4F26-9851-3B6B7987BE10}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{807B6E01-B3CD-4F26-9851-3B6B7987BE10}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{807B6E01-B3CD-4F26-9851-3B6B7987BE10}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{807B6E01-B3CD-4F26-9851-3B6B7987BE10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807B6E01-B3CD-4F26-9851-3B6B7987BE10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807B6E01-B3CD-4F26-9851-3B6B7987BE10}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{807B6E01-B3CD-4F26-9851-3B6B7987BE10}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{807B6E01-B3CD-4F26-9851-3B6B7987BE10}.Release|Win32.ActiveCfg = Release|Any CPU
+		{67F76314-D2CC-46C8-BC11-BD65E3E07B39}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{67F76314-D2CC-46C8-BC11-BD65E3E07B39}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{67F76314-D2CC-46C8-BC11-BD65E3E07B39}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{67F76314-D2CC-46C8-BC11-BD65E3E07B39}.Debug|Win32.ActiveCfg = Debug|Win32
+		{67F76314-D2CC-46C8-BC11-BD65E3E07B39}.Debug|Win32.Build.0 = Debug|Win32
+		{67F76314-D2CC-46C8-BC11-BD65E3E07B39}.Release|Any CPU.ActiveCfg = Release|Win32
+		{67F76314-D2CC-46C8-BC11-BD65E3E07B39}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{67F76314-D2CC-46C8-BC11-BD65E3E07B39}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{67F76314-D2CC-46C8-BC11-BD65E3E07B39}.Release|Win32.ActiveCfg = Release|Win32
+		{67F76314-D2CC-46C8-BC11-BD65E3E07B39}.Release|Win32.Build.0 = Release|Win32
+		{CA60A70E-AF69-4913-BB29-FCC64A2A565A}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{CA60A70E-AF69-4913-BB29-FCC64A2A565A}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{CA60A70E-AF69-4913-BB29-FCC64A2A565A}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{CA60A70E-AF69-4913-BB29-FCC64A2A565A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CA60A70E-AF69-4913-BB29-FCC64A2A565A}.Debug|Win32.Build.0 = Debug|Win32
+		{CA60A70E-AF69-4913-BB29-FCC64A2A565A}.Release|Any CPU.ActiveCfg = Release|Win32
+		{CA60A70E-AF69-4913-BB29-FCC64A2A565A}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{CA60A70E-AF69-4913-BB29-FCC64A2A565A}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{CA60A70E-AF69-4913-BB29-FCC64A2A565A}.Release|Win32.ActiveCfg = Release|Win32
+		{CA60A70E-AF69-4913-BB29-FCC64A2A565A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
