@@ -10,9 +10,9 @@ class Program
 
     static void Main(string[] args)
     {
-        LuaState luaState = LuaWrap.CreateLuaState();
-        luaState.DoString("print('hello world')");
+        LuaState.Test();
 
+        Console.WriteLine("回车键退出");
         Console.ReadLine();
     }
 }

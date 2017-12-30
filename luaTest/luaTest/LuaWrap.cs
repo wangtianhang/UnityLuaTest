@@ -26,6 +26,7 @@ public delegate int LuaCSFunction(IntPtr luaState);
 class LuaWrap
 {
     const string m_dll = "lua515.dll";
+    const int LUA_GLOBALSINDEX = -10002;
 
     [DllImport(m_dll, EntryPoint = "luaL_newstate", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
     public static extern IntPtr luaL_newstate();
@@ -39,8 +40,8 @@ class LuaWrap
     [DllImport(m_dll, EntryPoint = "luaL_loadstring", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
     public static extern int luaL_loadstring(IntPtr l, string str);
 
-    [DllImport(m_dll, EntryPoint = "luaL_register", CallingConvention = CallingConvention.Cdecl)]
-    public static extern void luaL_register(IntPtr L, string name, IntPtr fn);
+    //[DllImport(m_dll, EntryPoint = "luaL_register", CallingConvention = CallingConvention.Cdecl)]
+    //public static extern void luaL_register(IntPtr L, string name, IntPtr fn);
 
     [DllImport(m_dll, EntryPoint = "lua_gettop", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
     public static extern int lua_gettop(IntPtr luaState);
@@ -63,53 +64,27 @@ class LuaWrap
     [DllImport(m_dll, EntryPoint = "lua_pcall", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
     public static extern IntPtr lua_pcall(IntPtr l, int nargs, int nresults, int errfunc);
 
-    public static LuaState CreateLuaState()
-    {
-        IntPtr l = luaL_newstate();
-
-        LuaCSFunction funcWrap = WriteLine;
-        IntPtr fn = Marshal.GetFunctionPointerForDelegate(funcWrap);
-        lua_pushcclosure(l, fn, 0);
-        lua_setfield(l, -10002, "print");
-
-        return new LuaState(l);
-    }
-
     public static void luaL_dostring(IntPtr l, string str)
     {
         LuaWrap.luaL_loadstring(l, str);
         LuaWrap.lua_pcall(l, 0, -1, 0);
     }
 
-    static int WriteLine(IntPtr L)
+    public static void lua_register(IntPtr l, string name, LuaCSFunction func)
     {
-        try
-        {
-            int count = lua_gettop(L);
-            if (count == 1)
-            {
-                LuaTypes luaType = lua_type(L, 1);
-                string str = "";
-                switch (luaType)
-                {
-                    case LuaTypes.LUA_TSTRING:
-                        str = tolua_tostring(L, 1);
-                        break;
-                }
-                Console.WriteLine(str);
-                return 0;
-            }
-            else
-            {
-                Console.WriteLine("WriteLine param error");
-                return 0;
-            }
-        }
-        catch (System.Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-            return 0;
-        }
+        lua_pushcfunction(l, func);
+        lua_setglobal(l, name);
+    }
+
+    public static void lua_pushcfunction(IntPtr l, LuaCSFunction func)
+    {
+        IntPtr fn = Marshal.GetFunctionPointerForDelegate(func);
+        lua_pushcclosure(l, fn, 0);
+    }
+
+    public static void lua_setglobal(IntPtr l, string name)
+    {
+        lua_setfield(l, LUA_GLOBALSINDEX, name);
     }
 
     public static string tolua_tostring(IntPtr l, int index)
