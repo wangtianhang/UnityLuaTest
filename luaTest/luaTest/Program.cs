@@ -11,6 +11,7 @@ class Program
     static void Main(string[] args)
     {
         LuaState.Test();
+        //LuaInterpreter.Test();
 
         Console.WriteLine("回车键退出");
         Console.ReadLine();

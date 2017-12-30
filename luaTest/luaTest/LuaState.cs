@@ -13,13 +13,16 @@ class LuaState
         LuaState luaState = CreateLuaState();
         luaState.RegisterCSharpFunc();
         luaState.DoString("print('hello world')");
+        luaState.DoString("print('你好')");
+        luaState.DoString("print(2 + 3)");
+        luaState.DoString("print(2 == 3)");
     }
 
     public static LuaState CreateLuaState()
     {
-        IntPtr l = LuaWrap.luaL_newstate();
+        IntPtr l = LuaDLL.luaL_newstate();
 
-        LuaWrap.luaL_openlibs(l);
+        LuaDLL.luaL_openlibs(l);
 
         return new LuaState(l);
     }
@@ -35,7 +38,7 @@ class LuaState
     {
         //LuaCSFunction funcWrap = WriteLine;
 
-        LuaWrap.lua_register(m_luaState, "print", new LuaCSFunction(WriteLine));
+        LuaDLL.lua_register(m_luaState, "print", new LuaCSFunction(WriteLine));
 
 
     }
@@ -44,36 +47,20 @@ class LuaState
     {
         try
         {
-            int count = LuaWrap.lua_gettop(L);
-            if (count == 1)
-            {
-                LuaTypes luaType = LuaWrap.lua_type(L, 1);
-                string str = "";
-                switch (luaType)
-                {
-                    case LuaTypes.LUA_TSTRING:
-                        str = LuaWrap.tolua_tostring(L, 1);
-                        break;
-                }
-                Console.WriteLine(str);
-                return 0;
-            }
-            else
-            {
-                Console.WriteLine("WriteLine param error");
-                return 0;
-            }
+            object arg0 = LuaHelper.ToVarObject(L, 1);
+            Console.WriteLine(arg0.ToString());
+            return 0;
         }
         catch (System.Exception ex)
         {
             Console.WriteLine(ex.Message);
-            return 0;
+            return -1;
         }
     }
 
     public void DoString(string str)
     {
-        LuaWrap.luaL_dostring(m_luaState, str);
+        LuaDLL.luaL_dostring(m_luaState, str);
     }
 }
 

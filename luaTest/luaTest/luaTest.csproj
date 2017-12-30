@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LuaHelper.cs" />
+    <Compile Include="LuaInterpreter.cs" />
     <Compile Include="LuaState.cs" />
-    <Compile Include="LuaWrap.cs" />
+    <Compile Include="LuaDLL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCSharpToC.cs" />
