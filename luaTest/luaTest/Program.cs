@@ -63,19 +63,8 @@ namespace luaTest
         [DllImport("lua515.dll", EntryPoint = "lua_pcall", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr lua_pcall(IntPtr l, int nargs, int nresults, int errfunc);
 
-        [DllImport("testCharpToC.dll", EntryPoint = "Add", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-        public static extern int Add(int a, int b);
-
-        [DllImport("testCharpToC.dll", EntryPoint = "Length", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-        public static extern int Length(string str);
-
         static void Main(string[] args)
         {
-            int x = Add(1, 2);
-            Console.WriteLine(x.ToString());
-
-            int length = Length("test");
-            Console.WriteLine(length.ToString());
 
             IntPtr l = luaL_newstate();
             //luaL_openlibs(l);
