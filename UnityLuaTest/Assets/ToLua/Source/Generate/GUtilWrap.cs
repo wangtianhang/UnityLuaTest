@@ -12,6 +12,8 @@ public class GUtilWrap
 		L.RegFunction("HandleFileData", HandleFileData);
 		L.RegFunction("TestLuaCallByLuaDicTable", TestLuaCallByLuaDicTable);
 		L.RegFunction("TestLuaCallByLuaArrayTable", TestLuaCallByLuaArrayTable);
+		L.RegFunction("CreateIntoCSharpParam", CreateIntoCSharpParam);
+		L.RegFunction("TestLuaCallByClass", TestLuaCallByClass);
 		L.EndStaticLibs();
 	}
 
@@ -91,6 +93,39 @@ public class GUtilWrap
 			LuaTable arg0 = ToLua.CheckLuaTable(L, 1);
 			LuaInterface.LuaTable o = GUtil.TestLuaCallByLuaArrayTable(arg0);
 			ToLua.Push(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int CreateIntoCSharpParam(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 0);
+			IntoCSharpParam o = GUtil.CreateIntoCSharpParam();
+			ToLua.PushObject(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int TestLuaCallByClass(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			IntoCSharpParam arg0 = (IntoCSharpParam)ToLua.CheckObject<IntoCSharpParam>(L, 1);
+			OutCSharpParam o = GUtil.TestLuaCallByClass(arg0);
+			ToLua.PushObject(L, o);
 			return 1;
 		}
 		catch (Exception e)

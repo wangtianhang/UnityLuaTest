@@ -57,7 +57,7 @@ public static class CustomSettings
         //-------------------------------------------------------------------        
                         
         _GT(typeof(Debugger)).SetNameSpace(null),
-        _GT(typeof(GUtil)),  
+        
 
 #if USING_DOTWEENING
         _GT(typeof(DG.Tweening.DOTween)),
@@ -150,6 +150,10 @@ public static class CustomSettings
         
         _GT(typeof(UILabel)),
         _GT(typeof(LuaBehaviour)),
+
+        _GT(typeof(GUtil)),  
+        _GT(typeof(IntoCSharpParam)),
+        _GT(typeof(OutCSharpParam)),
     };
 
     public static List<Type> dynamicList = new List<Type>()

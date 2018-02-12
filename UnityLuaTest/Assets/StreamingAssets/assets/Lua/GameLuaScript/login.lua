@@ -61,4 +61,12 @@ function TestLua()
 	for k,v in ipairs(retArray)
 		do print("key ".. k .. " value " .. v)
 	end
+	
+	IntoCSharpParamInstance = GUtil.CreateIntoCSharpParam()
+	IntoCSharpParamInstance.m_intoParam = tableParam2
+	OutCSharpParamInstance = GUtil.TestLuaCallByClass(IntoCSharpParamInstance)
+	for k,v in ipairs(OutCSharpParamInstance.m_outParam)
+		do print("key ".. k .. " value " .. v)
+	end
+	print("OutCSharpParamInstance type " ..  type(OutCSharpParamInstance))
 end

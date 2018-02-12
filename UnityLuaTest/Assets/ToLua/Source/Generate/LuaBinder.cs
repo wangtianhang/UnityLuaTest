@@ -10,9 +10,11 @@ public static class LuaBinder
 		float t = Time.realtimeSinceStartup;
 		L.BeginModule(null);
 		LuaInterface_DebuggerWrap.Register(L);
-		GUtilWrap.Register(L);
 		UILabelWrap.Register(L);
 		LuaBehaviourWrap.Register(L);
+		GUtilWrap.Register(L);
+		IntoCSharpParamWrap.Register(L);
+		OutCSharpParamWrap.Register(L);
 		UIWidgetWrap.Register(L);
 		UIRectWrap.Register(L);
 		L.BeginModule("UnityEngine");

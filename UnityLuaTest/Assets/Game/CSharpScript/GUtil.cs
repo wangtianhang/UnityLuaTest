@@ -6,6 +6,16 @@ using UnityEngine;
 using System.IO;
 using LuaInterface;
 
+public class IntoCSharpParam
+{
+    public LuaTable m_intoParam = null;
+}
+
+public class OutCSharpParam
+{
+    public LuaTable m_outParam = null;
+}
+
 public class GUtil
 {
     public static string TestLuaCallByString(string param)
@@ -55,6 +65,18 @@ public class GUtil
         LuaTable ret = new LuaTable(reference, SingletonMgr.GetLuaState());
         ret[1] = "array1";
         ret[2] = "array2";
+        return ret;
+    }
+
+    public static IntoCSharpParam CreateIntoCSharpParam()
+    {
+        return new IntoCSharpParam();
+    }
+
+    public static OutCSharpParam TestLuaCallByClass(IntoCSharpParam param)
+    {
+        OutCSharpParam ret = new OutCSharpParam();
+        ret.m_outParam = param.m_intoParam;
         return ret;
     }
 }
