@@ -15,6 +15,7 @@ public static class LuaBinder
 		GUtilWrap.Register(L);
 		IntoCSharpParamWrap.Register(L);
 		OutCSharpParamWrap.Register(L);
+		PacketWrap.Register(L);
 		UIWidgetWrap.Register(L);
 		UIRectWrap.Register(L);
 		L.BeginModule("UnityEngine");

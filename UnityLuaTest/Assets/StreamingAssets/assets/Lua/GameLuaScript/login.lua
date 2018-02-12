@@ -27,6 +27,8 @@ function LoginClass:Login()
 	
 	TestLua();
 	
+	TestProto();
+	
 	labelGo:AddComponent(typeof(LuaBehaviour))
 	loginUI = LoginUIClass.New(labelGo);
 	loginUI:Init();
@@ -69,4 +71,31 @@ function TestLua()
 		do print("key ".. k .. " value " .. v)
 	end
 	print("OutCSharpParamInstance type " ..  type(OutCSharpParamInstance))
+	
+
+	
 end
+
+function TestProto()
+	local common_pb = require 'Protol.common_pb'
+	local person_pb = require 'Protol.person_pb'
+	
+	local msg = person_pb.Person()   
+	msg.header.cmd = 10010                                 
+    msg.header.seq = 1
+    msg.id = '1223372036854775807'            
+    msg.name = 'foo'
+	msg.array:append(1)                              
+    msg.array:append(2)
+	
+	local pb_data = msg:SerializeToString()
+	
+	local PacketInstance = GUtil.CreatePacket();
+	PacketInstance.m_bytes = pb_data;
+	local PacketInstance2 = GUtil.HanldeProtoBuf(PacketInstance)
+	
+	local msg2 = person_pb.Person()
+	msg2:ParseFromString(PacketInstance2.m_bytes)
+	print(msg2.id)
+end
+

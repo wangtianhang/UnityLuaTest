@@ -4,9 +4,9 @@ using System.IO;
 
 using LuaInterface;
 
-public class LuaLauncher : MonoBehaviour
+public class LuaLauncher : LuaClient
 {
-    LuaState m_lua;
+    //LuaState m_lua;
 
 	// Use this for initialization
 	void Start () 
@@ -14,17 +14,29 @@ public class LuaLauncher : MonoBehaviour
         //GameObject.DontDestroyOnLoad(gameObject);
 
 	    // todo 从远程服务器拉取lua框架
+	}
+
+    protected override LuaFileUtils InitLoader()
+    {
+        LuaResLoader ret = new LuaResLoader();
+        
+        return ret;
+    }
+
+    protected override void Bind()
+    {
+        base.Bind();
 
         // 启动lua框架
         StartCoroutine(LaunchLua());
-	}
+    }
 
     IEnumerator LaunchLua()
     {
-        m_lua = new LuaState();
-        m_lua.Start();
+        //m_lua = new LuaState();
+        //m_lua.Start();
 
-        LuaBinder.Bind(m_lua);
+        //LuaBinder.Bind(m_lua);
 
         string[] luaFiles = Directory.GetFiles(Application.streamingAssetsPath, "*.lua", SearchOption.AllDirectories);
         foreach(var iter in luaFiles)
@@ -35,13 +47,15 @@ public class LuaLauncher : MonoBehaviour
 
             string fileName = Path.GetFileNameWithoutExtension(iter);
             string luaText = www.text;
-            m_lua.DoString(luaText, fileName);
+            luaState.DoString(luaText, fileName);
         }
         
         //lua.CheckTop();
         //lua.Dispose();
 
-        LuaFunction luaFunc = m_lua.GetFunction("Main");
+        Debug.Log("LaunchLua Main");
+
+        LuaFunction luaFunc = luaState.GetFunction("GameMain");
         luaFunc.Call();
     }
 	
@@ -51,14 +65,17 @@ public class LuaLauncher : MonoBehaviour
 	
 	}
 
-    void OnLevelWasLoaded()
+    protected override void OnLevelWasLoaded(int level)
     {
-        LuaFunction luaFunc = m_lua.GetFunction("OnLevelWasLoaded");
+        base.OnLevelWasLoaded(level);
+
+        LuaFunction luaFunc = luaState.GetFunction("GameOnLevelWasLoaded");
+        Debug.Log("OnLevelWasLoaded " + Application.loadedLevelName);
         luaFunc.Call<string>(Application.loadedLevelName);
     }
 
     public LuaState GetLuaState()
     {
-        return m_lua;
+        return luaState;
     }
 }

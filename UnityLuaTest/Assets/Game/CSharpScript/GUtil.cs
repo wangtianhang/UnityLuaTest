@@ -16,6 +16,12 @@ public class OutCSharpParam
     public LuaTable m_outParam = null;
 }
 
+public class Packet
+{
+    [LuaByteBufferAttribute]
+    public byte[] m_bytes = null;
+}
+
 public class GUtil
 {
     public static string TestLuaCallByString(string param)
@@ -77,6 +83,19 @@ public class GUtil
     {
         OutCSharpParam ret = new OutCSharpParam();
         ret.m_outParam = param.m_intoParam;
+        return ret;
+    }
+
+    public static Packet CreatePacket()
+    {
+        return new Packet();
+    }
+
+    public static Packet HanldeProtoBuf(Packet data)
+    {
+        Packet ret = new Packet();
+        ret.m_bytes = new byte[data.m_bytes.Length];
+        Buffer.BlockCopy(data.m_bytes, 0, ret.m_bytes, 0, data.m_bytes.Length);
         return ret;
     }
 }

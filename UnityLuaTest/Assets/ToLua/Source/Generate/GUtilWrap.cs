@@ -14,6 +14,8 @@ public class GUtilWrap
 		L.RegFunction("TestLuaCallByLuaArrayTable", TestLuaCallByLuaArrayTable);
 		L.RegFunction("CreateIntoCSharpParam", CreateIntoCSharpParam);
 		L.RegFunction("TestLuaCallByClass", TestLuaCallByClass);
+		L.RegFunction("CreatePacket", CreatePacket);
+		L.RegFunction("HanldeProtoBuf", HanldeProtoBuf);
 		L.EndStaticLibs();
 	}
 
@@ -125,6 +127,39 @@ public class GUtilWrap
 			ToLua.CheckArgsCount(L, 1);
 			IntoCSharpParam arg0 = (IntoCSharpParam)ToLua.CheckObject<IntoCSharpParam>(L, 1);
 			OutCSharpParam o = GUtil.TestLuaCallByClass(arg0);
+			ToLua.PushObject(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int CreatePacket(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 0);
+			Packet o = GUtil.CreatePacket();
+			ToLua.PushObject(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int HanldeProtoBuf(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			Packet arg0 = (Packet)ToLua.CheckObject<Packet>(L, 1);
+			Packet o = GUtil.HanldeProtoBuf(arg0);
 			ToLua.PushObject(L, o);
 			return 1;
 		}

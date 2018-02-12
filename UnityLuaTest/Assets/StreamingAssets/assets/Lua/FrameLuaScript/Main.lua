@@ -2,7 +2,7 @@ GameObject = require "UnityEngine.GameObject"
 Application = require "UnityEngine.Application"
 Resources = require "UnityEngine.Resources"
 
-function Main()	
+function GameMain()	
 
 	print("Main")
 
@@ -11,7 +11,7 @@ function Main()
 
 end
 
-function OnLevelWasLoaded(level)
+function GameOnLevelWasLoaded(level)
 
 	print("OnLevelWasLoaded " .. level)
 

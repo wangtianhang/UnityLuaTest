@@ -185,6 +185,7 @@ public class LuaClient : MonoBehaviour
 
     void OnLevelLoaded(int level)
     {
+        Debug.Log("OnLevelLoaded " + level);
         if (levelLoaded != null)
         {
             levelLoaded.BeginPCall();
@@ -205,7 +206,7 @@ public class LuaClient : MonoBehaviour
         OnLevelLoaded(scene.buildIndex);
     }
 #else
-    protected void OnLevelWasLoaded(int level)
+    protected virtual void OnLevelWasLoaded(int level)
     {
         OnLevelLoaded(level);
     }

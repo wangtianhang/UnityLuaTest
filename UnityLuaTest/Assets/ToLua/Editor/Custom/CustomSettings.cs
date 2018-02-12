@@ -154,6 +154,7 @@ public static class CustomSettings
         _GT(typeof(GUtil)),  
         _GT(typeof(IntoCSharpParam)),
         _GT(typeof(OutCSharpParam)),
+        _GT(typeof(Packet))
     };
 
     public static List<Type> dynamicList = new List<Type>()
