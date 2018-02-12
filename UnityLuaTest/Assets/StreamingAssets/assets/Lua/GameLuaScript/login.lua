@@ -99,3 +99,10 @@ function TestProto()
 	print(msg2.id)
 end
 
+function TestCharpCallLua(PacketInstance)
+	local person_pb = require 'Protol.person_pb'
+	local msg2 = person_pb.Person()
+	msg2:ParseFromString(PacketInstance.m_bytes)
+	print("TestCharpCallLua " .. msg2.id)
+end
+

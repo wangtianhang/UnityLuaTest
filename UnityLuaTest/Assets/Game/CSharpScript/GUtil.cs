@@ -96,6 +96,9 @@ public class GUtil
         Packet ret = new Packet();
         ret.m_bytes = new byte[data.m_bytes.Length];
         Buffer.BlockCopy(data.m_bytes, 0, ret.m_bytes, 0, data.m_bytes.Length);
+
+        LuaFunction luaFunc = SingletonMgr.GetLuaState().GetFunction("TestCharpCallLua");
+        luaFunc.Call(ret);
         return ret;
     }
 }
