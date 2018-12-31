@@ -22,6 +22,7 @@ public class TestCustomLoader : LuaClient
     protected override void StartMain()
     {
         luaState.DoFile("TestLoader.lua");
+        luaState.DoFile("dump.lua");
         CallMain();
     }
 

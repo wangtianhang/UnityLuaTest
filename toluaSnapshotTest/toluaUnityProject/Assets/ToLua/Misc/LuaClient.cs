@@ -56,9 +56,12 @@ public class LuaClient : MonoBehaviour
 
     protected virtual void OpenLibs()
     {
-        luaState.OpenLibs(LuaDLL.luaopen_pb);
-        luaState.OpenLibs(LuaDLL.luaopen_struct);
-        luaState.OpenLibs(LuaDLL.luaopen_lpeg);
+        int ret = 0;
+        ret = luaState.OpenLibs(LuaDLL.luaopen_pb);
+        ret = luaState.OpenLibs(LuaDLL.luaopen_struct);
+        ret = luaState.OpenLibs(LuaDLL.luaopen_lpeg);
+        OpenLuaSnapshot();
+
 #if UNITY_STANDALONE_OSX || UNITY_EDITOR_OSX
         luaState.OpenLibs(LuaDLL.luaopen_bit);
 #endif
@@ -72,6 +75,16 @@ public class LuaClient : MonoBehaviour
         {
             OpenZbsDebugger();
         }
+    }
+
+    public void OpenLuaSnapshot()
+    {
+        Debug.Log("OpenLuaSnapshot");
+
+        luaState.OpenLibs(LuaDLL.luaopen_snapshot);
+
+        //luaState.OpenLibs(LuaDLL.luaopen_snapshot2);
+        //luaState.LuaSetField(-2, "snapshot");
     }
 
     public void OpenZbsDebugger(string ip = "localhost")
