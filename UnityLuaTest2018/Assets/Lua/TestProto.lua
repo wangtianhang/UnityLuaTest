@@ -4,6 +4,22 @@ local person_pb = require 'Protol.person_pb'
 function Decoder()
     local msg = person_pb.Person()
     msg:ParseFromString(TestProtol.data)
+
+    print('============================')
+    for k, v in pairs(msg) do
+        if type(v) == "table" then
+            print(tostring(k) , ' ' , tostring(v) , ' v[1] ' , v[1])
+        end
+    end
+    --print('msg.age ' ..  msg.age)
+    --print('tostring(msg) ' ..  tostring(msg))
+    --[[
+    for k, v in pairs(msg) do
+        print(tostring(k) .. ' ' .. tostring(v))
+    end
+    --]]
+    print('============================')
+    
     --tostring 不会打印默认值
     print('person_pb decoder: '..tostring(msg)..'age: '..msg.age..'\nemail: '..msg.email)
 end
