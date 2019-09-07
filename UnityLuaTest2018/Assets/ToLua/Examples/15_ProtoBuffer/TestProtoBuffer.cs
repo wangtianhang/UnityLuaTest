@@ -43,6 +43,7 @@ class Person
 
 public class TestProtoBuffer : LuaClient
 {
+    /*
     private string script = @"      
         local common_pb = require 'Protol.common_pb'
         local person_pb = require 'Protol.person_pb'
@@ -71,6 +72,7 @@ public class TestProtoBuffer : LuaClient
             TestProtol.data = pb_data
         end
         ";
+        */
 
     private string tips = "";
 
@@ -108,7 +110,8 @@ public class TestProtoBuffer : LuaClient
     protected override void OnLoadFinished()
     {
         base.OnLoadFinished();
-        luaState.DoString(script, "TestProtoBuffer.cs");
+        //luaState.DoString(script, "TestProtoBuffer.cs");
+        luaState.DoFile("TestProto.lua");
 
 #if !USE_PROTOBUF_NET
         LuaFunction func = luaState.GetFunction("Encoder");
