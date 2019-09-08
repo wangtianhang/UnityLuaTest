@@ -568,7 +568,7 @@ static int Lio_dump(lua_State *L) {
     return res;
 }
 
-LUALIB_API int luaopen_pb_io(lua_State *L) {
+LUALIB_API int luaopen_newpb_io(lua_State *L) {
     luaL_Reg libs[] = {
 #define ENTRY(name) { #name, Lio_##name }
         ENTRY(read),
@@ -577,7 +577,8 @@ LUALIB_API int luaopen_pb_io(lua_State *L) {
 #undef  ENTRY
         { NULL, NULL }
     };
-    luaL_newlib(L, libs);
+    //luaL_newlib(L, libs);
+	luaL_register(L, "newpb.io", libs);
     return 1;
 }
 
@@ -643,7 +644,7 @@ static int Lconv_decode_double(lua_State *L) {
     return 1;
 }
 
-LUALIB_API int luaopen_pb_conv(lua_State *L) {
+LUALIB_API int luaopen_newpb_conv(lua_State *L) {
     luaL_Reg libs[] = {
         { "decode_uint32", Lconv_encode_uint32 },
         { "decode_int32", Lconv_encode_int32 },
@@ -661,7 +662,8 @@ LUALIB_API int luaopen_pb_conv(lua_State *L) {
 #undef  ENTRY
         { NULL, NULL }
     };
-    luaL_newlib(L, libs);
+    //luaL_newlib(L, libs);
+	luaL_register(L, "newpb.conv", libs);
     return 1;
 }
 
@@ -805,7 +807,7 @@ static int Lbuf_pack(lua_State *L) {
     return 1;
 }
 
-LUALIB_API int luaopen_pb_buffer(lua_State *L) {
+LUALIB_API int luaopen_newpb_buffer(lua_State *L) {
     luaL_Reg libs[] = {
         { "__tostring", Lbuf_tostring },
         { "__len",      Lbuf_len },
@@ -1096,7 +1098,7 @@ LUALIB_API int lpb_newslice(lua_State *L, const char *s, size_t len) {
     return 1;
 }
 
-LUALIB_API int luaopen_pb_slice(lua_State *L) {
+LUALIB_API int luaopen_newpb_slice(lua_State *L) {
     luaL_Reg libs[] = {
         { "__tostring", Lslice_tostring },
         { "__len",      Lslice_len   },
@@ -1798,7 +1800,7 @@ static int Lpb_option(lua_State *L) {
 #undef  OPTS
 }
 
-LUALIB_API int luaopen_pb_new(lua_State *L) {
+LUALIB_API int luaopen_newpb(lua_State *L) {
     luaL_Reg libs[] = {
         { "pack",     Lbuf_pack     },
         { "unpack",   Lslice_unpack },
@@ -1833,7 +1835,8 @@ LUALIB_API int luaopen_pb_new(lua_State *L) {
         lua_pushvalue(L, -1);
         lua_setfield(L, -2, "__index");
     }
-    luaL_newlib(L, libs);
+    //luaL_newlib(L, libs);
+	luaL_register(L, "newpb", libs);
     return 1;
 }
 
@@ -1844,12 +1847,13 @@ static int Lpb_decode_unsafe(lua_State *L) {
     return lpb_decode(L, lpb_initext(pb_lslice(data, size)), 4);
 }
 
-LUALIB_API int luaopen_pb_unsafe(lua_State *L) {
+LUALIB_API int luaopen_newpb_unsafe(lua_State *L) {
     luaL_Reg libs[] = {
         { "decode", Lpb_decode_unsafe },
         { NULL, NULL }
     };
-    luaL_newlib(L, libs);
+    //luaL_newlib(L, libs);
+	luaL_register(L, "newpb.unsafe", libs);
     return 1;
 }
 
