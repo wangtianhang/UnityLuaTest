@@ -219,6 +219,9 @@ namespace LuaInterface
         */
         [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)]
         public static extern int luaopen_pb(IntPtr L);
+        
+        [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)] 
+        public static extern int luaopen_newpb(IntPtr L);
 
         [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)]
         public static extern int luaopen_ffi(IntPtr L);
