@@ -1798,7 +1798,7 @@ static int Lpb_option(lua_State *L) {
 #undef  OPTS
 }
 
-LUALIB_API int luaopen_pb(lua_State *L) {
+LUALIB_API int luaopen_pb_new(lua_State *L) {
     luaL_Reg libs[] = {
         { "pack",     Lbuf_pack     },
         { "unpack",   Lslice_unpack },
