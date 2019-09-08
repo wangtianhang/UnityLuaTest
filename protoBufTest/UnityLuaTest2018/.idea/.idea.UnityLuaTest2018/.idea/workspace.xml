@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1d3c64e3-7943-44c9-b61a-77f8b758c3c4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../UnityLuaTest/Assets/StreamingAssets/assets/Lua/GameLuaScript/LoginUI.lua" beforeDir="false" afterPath="$PROJECT_DIR$/../UnityLuaTest/Assets/StreamingAssets/assets/Lua/GameLuaScript/LoginUI.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UnityLuaTest/Assets/ToLua/Examples/01_HelloWorld/HelloWorld.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../UnityLuaTest/Assets/ToLua/Examples/01_HelloWorld/HelloWorld.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luaTest/Debug/testCharpToC.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../luaTest/Debug/testCharpToC.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luaTest/lua515/lua515.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/../luaTest/lua515/lua515.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luaTest/luaTest.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../luaTest/luaTest.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luaTest/luaTest.v12.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../luaTest/luaTest.v12.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luaTest/luaTest/LuaState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../luaTest/luaTest/LuaState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../luaTest/testCharpToC/Debug/vc120.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../luaTest/testCharpToC/Debug/vc120.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../toluaSnapshotTest/toluaUnityProject/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../toluaSnapshotTest/toluaUnityProject/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../toluaSnapshotTest/toluaUnityProject/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../toluaSnapshotTest/toluaUnityProject/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/ToLua/Examples/15_ProtoBuffer/TestProtoBuffer.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="126" column="38" lean-forward="true" selection-start-line="126" selection-start-column="38" selection-end-line="126" selection-end-column="38" />
+              <folding>
+                <marker date="1567870121112" expanded="false" signature="33:122" ph="..." />
+                <marker date="1567870121112" expanded="true" signature="875:4724" ph="{...}" />
+                <marker date="1567870121112" expanded="true" signature="882:2114" ph="/* private string script = @&quot; ... */" />
+                <marker date="1567870121112" expanded="true" signature="2151:2393" ph="/* 实际应用如Socket.Send(LuaStringBuffer buffer)函数发送协议, 在lua中调用Socket.Send(pb_data) ... */" />
+                <marker date="1567870121112" expanded="true" signature="2414:2606" ph="{...}" />
+                <marker date="1567870121112" expanded="true" signature="2656:2703" ph="{...}" />
+                <marker date="1567870121112" expanded="true" signature="2739:2882" ph="{...}" />
+                <marker date="1567870121112" expanded="true" signature="2989:4264" ph="{...}" />
+                <marker date="1567870121112" expanded="true" signature="4328:4376" ph="{...}" />
+                <marker date="1567870121112" expanded="true" signature="4394:4500" ph="{...}" />
+                <marker date="1567870121112" expanded="true" signature="4534:4722" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/ToLua/Misc/LuaClient.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="404">
+              <caret line="147" column="52" selection-start-line="147" selection-start-column="52" selection-end-line="147" selection-end-column="52" />
+              <folding>
+                <marker date="1567868013041" expanded="true" signature="0:1079" ph="/* Copyright (c) 2015-2017 topameng(topameng@qq.com) ... */" />
+                <marker date="1567868013041" expanded="false" signature="1086:1267" ph="..." />
+                <marker date="1567868013041" expanded="true" signature="1314:7077" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="1353:1401" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="1655:1712" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="1755:1793" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="1832:2283" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="2118:2179" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="2226:2277" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="2341:2867" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="2395:2528" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="2566:2643" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="2696:2769" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="2971:3037" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="3139:3195" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="3231:3512" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="3587:3896" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="3935:4086" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="4126:4259" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="4293:4392" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="4427:4571" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="4598:4782" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="4810:4953" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="4998:5088" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="5123:5438" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="5162:5326" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="5357:5432" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="5518:5571" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="5708:6332" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="5744:6326" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="6034:6137" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="6168:6257" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="6364:6395" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="6435:6466" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="6509:6555" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="6589:6622" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="6687:6870" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="6723:6864" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="6903:7075" ph="{...}" />
+                <marker date="1567868013041" expanded="true" signature="6939:7069" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Lua/Main.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Lua/TestProto.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/ToLua/Examples/Resources/Lua/Protol/person_pb.lua.bytes">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1816" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/ToLua/Lua/protobuf/protobuf.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/ToLua/Lua/protobuf/decoder.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/ToLua/Examples/15_ProtoBuffer/person.proto">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/ToLua/Examples/15_ProtoBuffer/common.proto">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ParseFromString</find>
+      <find>decode</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/ToLua/Misc/LuaClient.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ToLua/Examples/15_ProtoBuffer/TestProtoBuffer.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/ToLua/Examples/15_ProtoBuffer/TestProtoBuffer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Lua/TestProto.lua" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/.idea.UnityLuaTest2018/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/.idea.UnityLuaTest2018/.idea/indexLayout.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="260" />
+    <option name="y" value="80" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="UnityExplorer" proportions="" version="1">
+      <autoscrollToSource UnityExplorer="false" />
+      <autoscrollFromSource UnityExplorer="true" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="UnityExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="Lua" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="ToLua" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="ToLua" type="1045f7f1:UnityExplorerNode" />
+              <item name="Examples" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="ToLua" type="1045f7f1:UnityExplorerNode" />
+              <item name="Examples" type="1045f7f1:UnityExplorerNode" />
+              <item name="15_ProtoBuffer" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="ToLua" type="1045f7f1:UnityExplorerNode" />
+              <item name="Examples" type="1045f7f1:UnityExplorerNode" />
+              <item name="Resources" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="ToLua" type="1045f7f1:UnityExplorerNode" />
+              <item name="Examples" type="1045f7f1:UnityExplorerNode" />
+              <item name="Resources" type="1045f7f1:UnityExplorerNode" />
+              <item name="Lua" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="ToLua" type="1045f7f1:UnityExplorerNode" />
+              <item name="Examples" type="1045f7f1:UnityExplorerNode" />
+              <item name="Resources" type="1045f7f1:UnityExplorerNode" />
+              <item name="Lua" type="1045f7f1:UnityExplorerNode" />
+              <item name="Protol" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="ToLua" type="1045f7f1:UnityExplorerNode" />
+              <item name="Lua" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="ToLua" type="1045f7f1:UnityExplorerNode" />
+              <item name="Lua" type="1045f7f1:UnityExplorerNode" />
+              <item name="protobuf" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="ToLua" type="1045f7f1:UnityExplorerNode" />
+              <item name="Misc" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Packages" type="4e2708dd:PackagesRoot" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-hidden-items" value="false" />
+        <option name="show-project-names" value="true" />
+      </pane>
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="userSelectedPid" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="userSelectedPid" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d3c64e3-7943-44c9-b61a-77f8b758c3c4" name="Default Changelist" comment="" />
+      <created>1567869389564</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1567869389564</updated>
+      <workItem from="1567869392952" duration="517000" />
+      <workItem from="1567869951197" duration="3150000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3667000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.55818355" visible="true" weight="0.18007459" />
+      <window_info anchor="bottom" id="LuaCheck" order="0" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Run" order="3" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="NuGet" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Performance Profiler" order="9" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Unity" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Unit Tests" order="14" />
+      <window_info anchor="bottom" id="Terminal" order="15" />
+      <window_info anchor="bottom" id="Event Log" order="16" side_tool="true" />
+      <window_info anchor="bottom" id="Errors In Solution" order="17" visible="true" weight="0.32923368" />
+      <window_info anchor="right" id="Database" order="0" weight="0.32978156" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+      <window_info anchor="right" id="Structure" order="5" sideWeight="0.44181645" visible="true" weight="0.17847629" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/flow/bom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="323" column="4" selection-start-line="323" selection-start-column="4" selection-end-line="323" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ToLua/Examples/Resources/Lua/Protol/person_pb.lua.bytes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1816" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ToLua/Misc/LuaClient.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="147" column="52" selection-start-line="147" selection-start-column="52" selection-end-line="147" selection-end-column="52" />
+          <folding>
+            <marker date="1567868013041" expanded="true" signature="0:1079" ph="/* Copyright (c) 2015-2017 topameng(topameng@qq.com) ... */" />
+            <marker date="1567868013041" expanded="false" signature="1086:1267" ph="..." />
+            <marker date="1567868013041" expanded="true" signature="1314:7077" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="1353:1401" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="1655:1712" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="1755:1793" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="1832:2283" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="2118:2179" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="2226:2277" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="2341:2867" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="2395:2528" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="2566:2643" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="2696:2769" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="2971:3037" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="3139:3195" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="3231:3512" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="3587:3896" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="3935:4086" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="4126:4259" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="4293:4392" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="4427:4571" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="4598:4782" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="4810:4953" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="4998:5088" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="5123:5438" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="5162:5326" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="5357:5432" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="5518:5571" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="5708:6332" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="5744:6326" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="6034:6137" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="6168:6257" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="6364:6395" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="6435:6466" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="6509:6555" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="6589:6622" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="6687:6870" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="6723:6864" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="6903:7075" ph="{...}" />
+            <marker date="1567868013041" expanded="true" signature="6939:7069" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Lua/Main.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ToLua/Examples/15_ProtoBuffer/person.proto">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ToLua/Examples/15_ProtoBuffer/common.proto">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ToLua/Examples/15_ProtoBuffer/TestProtoBuffer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="126" column="38" lean-forward="true" selection-start-line="126" selection-start-column="38" selection-end-line="126" selection-end-column="38" />
+          <folding>
+            <marker date="1567870121112" expanded="false" signature="33:122" ph="..." />
+            <marker date="1567870121112" expanded="true" signature="875:4724" ph="{...}" />
+            <marker date="1567870121112" expanded="true" signature="882:2114" ph="/* private string script = @&quot; ... */" />
+            <marker date="1567870121112" expanded="true" signature="2151:2393" ph="/* 实际应用如Socket.Send(LuaStringBuffer buffer)函数发送协议, 在lua中调用Socket.Send(pb_data) ... */" />
+            <marker date="1567870121112" expanded="true" signature="2414:2606" ph="{...}" />
+            <marker date="1567870121112" expanded="true" signature="2656:2703" ph="{...}" />
+            <marker date="1567870121112" expanded="true" signature="2739:2882" ph="{...}" />
+            <marker date="1567870121112" expanded="true" signature="2989:4264" ph="{...}" />
+            <marker date="1567870121112" expanded="true" signature="4328:4376" ph="{...}" />
+            <marker date="1567870121112" expanded="true" signature="4394:4500" ph="{...}" />
+            <marker date="1567870121112" expanded="true" signature="4534:4722" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Lua/TestProto.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ToLua/Lua/protobuf/protobuf.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ToLua/Lua/protobuf/decoder.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
