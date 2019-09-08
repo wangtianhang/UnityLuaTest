@@ -925,7 +925,7 @@ end
 
 end
 
-local has_pb, pb = pcall(require, "pb") do
+local has_pb, pb = pcall(require, "newpb") do
 if has_pb then
    local descriptor_pb =
    "\10\249#\10\16descriptor.proto\18\15google.protobuf\"G\10\17FileDescript"..

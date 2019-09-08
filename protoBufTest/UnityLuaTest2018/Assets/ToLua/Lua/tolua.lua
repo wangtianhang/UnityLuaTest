@@ -17,6 +17,8 @@ if DebugServerIp then
 end
 
 require "misc.functions"
+
+
 Mathf		= require "UnityEngine.Mathf"
 Vector3 	= require "UnityEngine.Vector3"
 Quaternion	= require "UnityEngine.Quaternion"
@@ -41,5 +43,8 @@ require "System.Timer"
 require "System.coroutine"
 require "System.ValueType"
 require "System.Reflection.BindingFlags"
+
+--local protoc = require "protoc"
+--print(' protoc ' , protoc);
 
 --require "misc.strict"

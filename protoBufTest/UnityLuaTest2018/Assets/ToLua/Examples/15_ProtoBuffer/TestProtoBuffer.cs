@@ -111,17 +111,25 @@ public class TestProtoBuffer : LuaClient
     {
         base.OnLoadFinished();
         //luaState.DoString(script, "TestProtoBuffer.cs");
-        luaState.DoFile("TestProto.lua");
+        luaState.DoFile("TestProto2.lua");
 
 #if !USE_PROTOBUF_NET
         LuaFunction func = luaState.GetFunction("Encoder");
-        func.Call();
-        func.Dispose();
-
-        func = luaState.GetFunction("Decoder");
-        func.Call();
-        func.Dispose();
+        if (func != null)
+        {
+            func.Call();
+            func.Dispose();
+        }
         func = null;
+
+        LuaFunction func2 = luaState.GetFunction("Decoder");
+        if (func2 != null)
+        {
+            func2.Call();
+            func2.Dispose();
+        }
+        func2 = null;
+        
 #else
         Person data = new Person();
         data.id = 1223372036854775807;
